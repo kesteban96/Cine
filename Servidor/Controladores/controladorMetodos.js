@@ -14,8 +14,12 @@ controlador.crearReserva = async(req, res) => {
     });
 
 };
-controlador.eliminarReserva = function() {
+controlador.eliminarReserva = async(req, res) => {
 
+    await esquemaReserva.findByIdAndRemove(req.params.id);
+    res.json({
+        status: 'reserva eliminada'
+    });
 };
 
 //obtengo todas las reservas realizadas
@@ -28,13 +32,30 @@ controlador.verReservas = async(req, res) => {
 
 
 //obtengo la reserva realizada de alguien en especifico
-controlador.verReserva = function() {
+controlador.verReserva = async(req, res) => {
 
+    //console.log(req.params.id); //me trae todos los parametros de la url, solo me va traer el id en este caso
+    const reservaIndividual = await esquemaReserva.findById(req.params.id);
+    res.json(reservaIndividual);
 };
 
 //editar reserva
-controlador.editarReserva = function() {
+controlador.editarReserva = async(req, res) => {
 
+    //const editarIndividual = esquemaReserva.findByIdAndUpdate(req.params.id); //findByAndUpdate es busca por id y actualiza
+
+    const reservaNueva = {
+        nombrePelicula: req.body.nombrePelicula,
+        nombrePersona: req.body.nombrePersona,
+        nombreTeatro: req.body.nombreTeatro,
+        horaReserva: req.body.horaReserva,
+        ubicacion: req.body.ubicacion,
+        precio: req.body.precio,
+    };
+    await esquemaReserva.findByIdAndUpdate(req.params.id, { $set: reservaNueva }, { new: true });
+    res.json({
+        status: 'reserva actualizada'
+    })
 };
 
 module.exports = controlador; // exporto el objeto para poder usarlo en cualquier lugar
