@@ -18,7 +18,8 @@ app.use(express.json()); //ayuda al servidor a entender los datos que vienen des
 
 //rutas del servdor 
 
-app.use(require('./Routes-URL/reservas')); //obtengo el contenido de las rutas
+app.use('/api/reservas', require('./Routes-URL/reservas')); //obtengo el contenido de las rutas 
+//con esto el servidor usara esta ruta
 
 //iniciando el servidor
 app.listen(app.get('port'), () => {
