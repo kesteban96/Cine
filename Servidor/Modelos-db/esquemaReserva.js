@@ -1,5 +1,4 @@
 // aca se modela lo necesario para realizar la reserva e la base de datos
-
 const mongoose = require('mongoose');
 const { Schema } = mongoose; //para definir el esquema  
 // este mongoose lo usare para definir mis esquemas de datos los cuales seran reconocidos por mongodb
@@ -10,7 +9,7 @@ const esquemaReserva = new Schema({
     nombreTeatro: { type: String, required: true },
     horaReserva: { type: String, required: true },
     ubicacion: { type: String, required: true },
-    precio: { type: number, required: true }
+    precio: { type: Number, required: true }
 });
 
 //a continuacion se le indicara a mongo que datos voy a estar almacenando

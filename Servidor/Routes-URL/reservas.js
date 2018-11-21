@@ -9,7 +9,7 @@ const router = express.Router(); //creando el objeto router el cual tendra todas
 //estas son las rutas que el servidor tiene disponible
 const controladorMetodos = require('../Controladores/controladorMetodos');
 router.get('/', controladorMetodos.verReservas); //get:obtener para ver las reservas
-router.post('/', controladorMetodos.realizarReserva); //post:gurdar es para guardar datos
+router.post('/', controladorMetodos.crearReserva); //post:gurdar es para guardar datos
 router.get('/:id', controladorMetodos.verReserva); //get para ver las reserva de una sola persona
 router.put('/:id', controladorMetodos.editarReserva); //put: actualizar el id me ayuda a identificar a quien quiere actualizar
 router.delete('/:id', controladorMetodos.eliminarReserva); //delete:eliminar
