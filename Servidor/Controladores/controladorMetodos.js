@@ -50,6 +50,7 @@ controlador.editarReserva = async(req, res) => {
         nombreTeatro: req.body.nombreTeatro,
         horaReserva: req.body.horaReserva,
         ubicacion: req.body.ubicacion,
+        fecha: req.body.fecha,
         precio: req.body.precio,
     };
     await esquemaReserva.findByIdAndUpdate(req.params.id, { $set: reservaNueva }, { new: true });

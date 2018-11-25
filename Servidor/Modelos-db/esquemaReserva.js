@@ -9,6 +9,7 @@ const esquemaReserva = new Schema({
     nombreTeatro: { type: String, required: true },
     horaReserva: { type: String, required: true },
     ubicacion: { type: String, required: true },
+    fecha: { type: String, required: true },
     precio: { type: Number, required: true }
 });
 
