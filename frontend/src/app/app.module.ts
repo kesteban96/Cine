@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { ROUTES } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
 import { InicialComponent } from './components/inicial/inicial.component';
@@ -14,7 +14,7 @@ import { InicialComponent } from './components/inicial/inicial.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ROUTES
   ],
   providers: [],
   bootstrap: [AppComponent]
