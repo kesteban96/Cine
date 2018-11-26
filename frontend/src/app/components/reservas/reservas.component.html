@@ -3,8 +3,8 @@
         <div class="col s5">
             <div class="card">
                 <div class="card-content">
-                    <!--A continuacion se enviara el formulario y al eviar este formulario se ejecutara el metodo agregar reserva-->
-                    <form #formularioReserva=ngReserva (ngSumit)="agregarReserva(formularioReserva)">
+
+                    <form #formularioReserva="ngForm" (ngSumit)="agregarReserva(formularioReserva)">
 
                     </form>
                 </div>
