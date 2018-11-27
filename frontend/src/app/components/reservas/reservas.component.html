@@ -5,7 +5,29 @@
                 <div class="card-content">
 
                     <form #formularioReserva="ngForm" (ngSumit)="agregarReserva(formularioReserva)">
-
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="nombrePelicula" #nombrePelicula="ngModel" [(ngModel)]="reservasService.selecionarReserva.nombrePelicula" placeholder="Ingrese el nombre de la pelicula">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="nombrePersona" #nombrePersona="ngModel" [(ngModel)]="reservasService.selecionarReserva.nombrePersona" placeholder="Ingrese el nombre de la persona">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="nombreTeatro" #nombreTeatro="ngModel" [(ngModel)]="reservasService.selecionarReserva.nombreTeatro" placeholder="Ingrese el nombre del teatro">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="horaReserva" #horaReserva="ngModel" [(ngModel)]="reservasService.selecionarReserva.horaReserva" placeholder="Ingrese la hora de la pelicula">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="reservasService.selecionarReserva.ubicacion" placeholder="Ingrese la ubicacion">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="fecha" #fecha="ngModel" [(ngModel)]="reservasService.selecionarReserva.fecha" placeholder="Ingrese la fecha">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="precio" #precio="ngModel" [(ngModel)]="reservasService.selecionarReserva.precio" placeholder="Ingrese el precio">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
