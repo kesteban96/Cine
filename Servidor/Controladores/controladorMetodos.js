@@ -7,7 +7,17 @@ const controlador = {}; //cree el objeto controlador
 //guardo la reserva
 controlador.crearReserva = async(req, res) => {
 
-    const solicitudReserva = new esquemaReserva(req.body); //lo que me manda el cliente a guardar en la base de datos
+    const solicitudReserva = new esquemaReserva({
+        nombrePelicula: req.body.nombrePelicula,
+        nombrePersona: req.body.nombrePersona,
+        nombreTeatro: req.body.nombreTeatro,
+        horaReserva: req.body.horaReserva,
+        ubicacion: req.body.ubicacion,
+        fecha: req.body.fecha,
+        precio: req.body.precio
+    }); //lo que me manda el cliente a guardar en la base de datos
+
+
     await solicitudReserva.save();
     res.json({
         'status': 'reserva realizada'

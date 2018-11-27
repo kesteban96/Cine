@@ -5,6 +5,7 @@
                 <div class="card-content">
 
                     <form #formularioReserva="ngForm" (ngSumit)="agregarReserva(formularioReserva)">
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="reservasService.selecionarReserva._id">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input type="text" name="nombrePelicula" #nombrePelicula="ngModel" [(ngModel)]="reservasService.selecionarReserva.nombrePelicula" placeholder="Ingrese el nombre de la pelicula">
@@ -39,7 +40,35 @@
             </div>
         </div>
         <div class="col s7">
-
+            <table>
+                <thead>
+                    <th>nombrePelicula</th>
+                    <th>nombrePersona</th>
+                    <th>nombreTeatro</th>
+                    <th>horaReserva</th>
+                    <th>ubicacion</th>
+                    <th>fecha</th>
+                    <th>operacion</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reserva of reservasService.reservas">
+                        <td>{{reserva.nombrePelicula}}</td>
+                        <td>{{reserva.nombrePersona}}</td>
+                        <td>{{reserva.nombreTeatro}}</td>
+                        <td>{{reserva.horaReserva}}</td>
+                        <td>{{reserva.ubicacion}}</td>
+                        <td>{{reserva.fecha}}</td>
+                        <td>
+                            <a (click)="editarReserva(reserva)">
+                                <i class="material-icons">editar</i>
+                            </a>
+                            <a (click)="elminarReserva(reserva._id)">
+                                <i class="material-icons">delete</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
     </div>
