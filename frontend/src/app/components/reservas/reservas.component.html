@@ -27,6 +27,12 @@
                             <div class="input-field col s12">
                                 <input type="text" name="precio" #precio="ngModel" [(ngModel)]="reservasService.selecionarReserva.precio" placeholder="Ingrese el precio">
                             </div>
+                            <div class="card-action">
+                                <div class="input-field col s12">
+                                    <button class="btn right" style="margin-left :2px" (click)="agregarReserva(formularioReserva)"> Reservar</button>
+                                    <button class="btn" (click)="reserForm(formularioReserva)"> Limpiar</button>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
